@@ -1,0 +1,5 @@
+.navbar-brand, .nav-link {
+    height: 50px;
+    padding-top: -20;
+    padding-bottom: -10;
+}

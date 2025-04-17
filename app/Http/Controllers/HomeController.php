@@ -1,0 +1,226 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Carousel;
+use Illuminate\Http\Request;
+use App\Models\TimeTableModel;
+use App\Models\PgsyllabusModel;
+use App\Models\UgsyllabusModel;
+use App\Models\AboutCollegeModel;
+use App\Models\AboutLibraryModel;
+use App\Models\LibraryRulesModel;
+use App\Models\NotificationModel;
+use App\Models\teachingStaffModel;
+use App\Models\LibraryServiceModel;
+use App\Models\BooksCollectionModel;
+use App\Models\StudentStrengthModel;
+use App\Models\AcademicCalendarModel;
+use App\Models\NonTeachingStaffModel;
+use App\Models\principalMessageModel;
+use App\Models\secreatoryMessageModel;
+use App\Models\AdmissionProcedureModel;
+use App\Models\AdministrativeCouncilModel;
+
+
+class HomeController extends Controller
+{
+    public function home()
+    {
+        $data['getRecords'] = Carousel::getRecordsImage();
+        return view('home',$data);
+    }
+    public function vissionMission()
+    {
+        return view('frontend/vission-mission');
+    }
+    public function aboutCollege()
+    {
+        $data['getRecords'] = AboutCollegeModel::getRecordsImage();
+        return view('frontend/aboutCollege',$data);
+    }
+    public function secreatoryMessage()
+    {
+        $data['getRecords'] = SecreatoryMessageModel::getRecordsImage();
+        return view('frontend/secreatoryMessage', $data);
+    }
+    public function principalMessage()
+    {
+        $data['getRecords'] = PrincipalMessageModel::getRecordsImage();
+        return view('frontend/principalMessage',$data);
+    }
+    public function CodeofConduct()
+    {
+        return view('frontend/CodeofConduct');
+    }
+    public function organogram()
+    {
+        return view('frontend/organogram');
+    }
+    public function administrativeCouncil()
+    {
+        $data['getRecords'] = AdministrativeCouncilModel::getRecordsImage();
+        return view('frontend/administrativeCouncil', $data);
+    }
+    public function teachingStaff()
+    {
+        $data['getRecords'] = TeachingStaffModel::getRecordsImage();
+        return view('frontend/teachingStaff',$data);
+    }
+    public function NonTeachingStaff()
+    {
+        $data['getRecords'] = NonTeachingStaffModel::getRecordsImage();
+        return view('frontend/NonTeachingStaff',$data);
+    }
+    public function syllabus()
+    {
+        return view('frontend/syllabus');
+    }
+    public function ugsyllabus()
+    {
+        $data['getRecords'] = UgsyllabusModel::getRecords();
+        return view('frontend/ugsyllabus', $data);
+    }
+    public function pgsyllabus()
+    {
+        $data['getRecords'] = PgsyllabusModel::getRecords();
+        return view('frontend/pgsyllabus', $data);
+    }
+    public function progOffered()
+    {
+        return view('frontend/progOffered');
+    }
+    public function progOutcome()
+    {
+        return view('frontend/progOutcome');
+    }
+    public function prospectus()
+    {
+        return view('frontend/prospectus');
+    }
+    public function academicCalendar()
+    {
+        $data['getRecords'] = AcademicCalendarModel::getRecords();
+        return view('frontend/academicCalendar',$data);
+    }
+    public function admissionProcedure()
+    {
+        $data['getRecords'] = AdmissionProcedureModel::getRecordsImage();
+        return view('frontend/admissionProcedure',$data);
+    }
+    public function notification()
+    {
+        $data['getRecords'] = NotificationModel::getRecords();
+        return view('frontend/notification', $data);
+    }
+    public function studentStrenght()
+    {
+        $data['getRecords'] = StudentStrengthModel::getRecords();
+        return view('frontend/studentStrenght', $data);
+    }
+    public function timeTable()
+    {
+        $data['getRecords'] = TimeTableModel::getRecords();
+        return view('frontend/timeTable',$data);
+    }
+    public function aboutLibrary()
+    {
+        $data['getRecords'] = AboutLibraryModel::getRecordsImage();
+        return view('frontend/aboutLibrary',$data);
+    }
+    public function libraryRules()
+    {
+        $data['getRecords'] = LibraryRulesModel::getRecordsImage();
+        return view('frontend/libraryRules', $data);
+    }
+    public function libraryServices()
+    {
+        $data['getRecords'] = LibraryServiceModel::getRecordsImage();
+        return view('frontend/libraryServices',$data);
+    }
+    public function booksCollection()
+    {
+        $data['getRecords'] = BooksCollectionModel::getRecordsImage();
+        return view('frontend/booksCollection', $data);
+    }
+    public function gallery()
+    {
+        return view('frontend/gallery');
+    }
+    public function admissionCommittee()
+    {
+        return view('frontend/admissionCommittee');
+    }
+    public function ScStCommittee()
+    {
+        return view('frontend/ScStCommittee');
+    }
+    public function minorityCell()
+    {
+        return view('frontend/minorityCell');
+    }
+    public function grc()
+    {
+        return view('frontend/grc');
+    }
+    public function arc()
+    {
+        return view('frontend/arc');
+    }
+    public function ashc()
+    {
+        return view('frontend/ashc');
+    }
+    public function wec()
+    {
+        return view('frontend/wec');
+    }
+    public function aboutIQAC()
+    {
+        return view('frontend/aboutIQAC');
+    }
+    public function aqarReports()
+    {
+        return view('frontend/aqarReports');
+    }
+    public function ssrReports()
+    {
+        return view('frontend/ssrReports');
+    }
+    public function aboutNAAC()
+    {
+        return view('frontend/aboutNAAC');
+    }
+    public function criterion1()
+    {
+        return view('frontend/criterion1');
+    }
+    public function collegeDocuments()
+    {
+        return view('frontend/collegeDocuments');
+    }
+    public function criterion2()
+    {
+        return view('frontend/criterion2');
+    }
+    public function criterion3()
+    {
+        return view('frontend/criterion3');
+    }
+    public function criterion4()
+    {
+        return view('frontend/criterion4');
+    }
+    public function criterion5()
+    {
+        return view('frontend/criterion5');
+    }
+    public function criterion6()
+    {
+        return view('frontend/criterion6');
+    }
+    public function criterion7()
+    {
+        return view('frontend/criterion7');
+    }
+}

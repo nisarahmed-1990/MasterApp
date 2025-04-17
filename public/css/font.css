@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+*{
+    font-family: Winky Sans;
+    font-style: normal;
+    padding: 0px;
+    margin: 0px;
+}
+nav{
+    font-weight: 400;
+    font-size: large;
+    background-color: #2136C7;
+    box-shadow: 1px  4px 10px gray;
+    padding: 0;
+
+}
+
+
+.header_img{
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+}
+#carousel{
+    margin-top: 5px;
+    box-shadow: 1px  4px 10px gray;
+
+}
+#carousel-img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.card {
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #F8F9FA;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+    font-family: "Winky Sans";
+    color: #138496;
+}
+.card-text {
+    font-family: poppins;
+}
+.main-section {
+    padding: 50px;
+    background-color: #ffffff;
+}
+.section-title {
+    font-family: 'poppins'; /* Custom font for title */
+}
+#section_title{
+    font-family: "Dancing Script";
+}
+.line{
+
+    border: 1px solid #138496;
+    display: inline-block;
+    width: 50px;
+    margin-bottom: 5px;
+
+}
+.line-2{
+
+    border: 1px solid #138496;
+    display: inline-block;
+    width: 75px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+
+}
+.line-3{
+
+    border: 1px solid #138496;
+    display: inline-block;
+    width: 75px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+
+}
+.line-4{
+
+    border: 1px solid #4B49B6;
+    display: inline-block;
+    width: 25px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+
+}
+
+.announcement{
+    margin: 15px;
+    background-color:#4B49B6;
+    padding: 2px;
+    color: white;
+    font-weight: 500;
+}
+.shadow{
+    box-shadow: 1px  4px 10px gray;
+}
+.image-container {
+    display: inline;
+    list-style-type:none;
+    justify-content: center;
+    border: 1px;
+}
+.image-container img {
+    width: 200px; /* Set width as needed */
+    height: 200px; /* Maintain aspect ratio */
+    margin: 5px; /* Add some space between images */
+
+    border-radius: 5%;
+}
+
+
+.lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.container-1 {
+    margin: 70px auto;
+    max-width: 960px;
+}
+.btn {
+    padding: 1.25rem;
+    border: 0;
+    border-radius: 3px;
+    background-color: #4F46E5;
+    color: #fff;
+    cursor: pointer;
+}
+.container img {
+    width: 300px;
+    display: inline;
+    list-style-type: none;
+    object-fit: cover;
+    padding: 5px;
+ }
+ #image1{
+    border-radius: 10% 0% 10% 0%;
+
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 10px;
+ }
+  #backImg{
+    /* background-color: #6B7785; */
+    /* background-image:url('/MasterApp/public/assets/backimg.jpg'); */
+    /* opacity: 0.5; */
+    /* background-repeat: inherit;
+    margin-top:5px; */
+    background-color: #6B7785
+ }
+ #Nbackgroud{
+    background-image: url('/assets/background.png');
+ }
+
