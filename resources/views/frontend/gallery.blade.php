@@ -30,12 +30,15 @@
                   <div style="margin:30px auto"></div>
                 <div style="margin:30px auto">
             </div>
-    <img class="lightboxed" rel="group1" src="{{ url('img/portfolio-1.jpg') }}"  alt="Image Alt" data-caption="Image Title" />
+    {{-- <img class="lightboxed" rel="group1" src="{{ url('img/portfolio-1.jpg') }}"  alt="Image Alt" data-caption="Image Title" />
 	<img class="lightboxed" rel="group1" src="{{ url('img/portfolio-2.jpg') }}"  alt="Image Alt" data-caption="Image Caption" />
 	<img class="lightboxed" rel="group1" src="{{ url('img/portfolio-3.jpg') }}"  alt="Image Alt" data-caption="Image Caption" />
 	<img class="lightboxed" rel="group1" src="{{ url('img/portfolio-4.jpg') }}"  alt="Image Alt" data-caption="Image Caption" />
     <img class="lightboxed" rel="group1" src="{{ url('img/portfolio-5.jpg') }}"  alt="Image Alt" data-caption="Image Caption" />
-    <img class="lightboxed" rel="group1" src="{{ url('img/portfolio-6.jpg') }}"  alt="Image Alt" data-caption="Image Caption" />
+    <img class="lightboxed" rel="group1" src="{{ url('img/portfolio-6.jpg') }}"  alt="Image Alt" data-caption="Image Caption" /> --}}
+    @foreach ($getRecords as $value)
+    <img style="width: 300px;height:250px" class="lightboxed" rel="group1" src="{{ asset('upload/gallery/'.$value->image_path) }}"  alt="Image Alt" data-caption="{!! $value->title !!}" />
+    @endforeach
 </div>
 
 
@@ -47,7 +50,7 @@
       <div  class="col-1" style="margin-top: 40px;">
 
         {{-- Notification --}}
-        <div class="card" style="width: 11rem;">
+        <div class="card" style="width: 20rem;">
             <div class="card-header">
               Quick Links
             </div>

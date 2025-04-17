@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\DashboardController;
@@ -251,4 +252,13 @@ Route::group(['middleware'=>'adminuser'],function(){
        Route::post('bookCollection_edit/{id}',[booksCollectionController::class,'bookCollection_update'])->name('bookCollection_update');
        Route::get('bookCollection_delete/{id}',[booksCollectionController::class,'bookCollection_delete'])->name('bookCollection_delete');
        // Books Collection  routes Endss here
+
+        // Gallery Items routes starts here
+        Route::get('gallery_list',[GalleryController::class,'gallery_list'])->name('gallery_list');
+        Route::get('gallery_add',[GalleryController::class,'gallery_add'])->name('gallery_add');
+        Route::post('gallery_add',[GalleryController::class,'gallery_insert'])->name('gallery_insert');
+        Route::get('gallery_edit/{id}',[GalleryController::class,'gallery_edit'])->name('gallery_edit');
+        Route::post('gallery_edit/{id}',[GalleryController::class,'gallery_update'])->name('gallery_update');
+        Route::get('gallery_delete/{id}',[GalleryController::class,'gallery_delete'])->name('gallery_delete');
+        // Gallery Items  routes Endss here
 });

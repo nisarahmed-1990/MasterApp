@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carousel;
+use App\Models\GalleryModel;
 use Illuminate\Http\Request;
 use App\Models\TimeTableModel;
 use App\Models\PgsyllabusModel;
@@ -145,7 +146,8 @@ class HomeController extends Controller
     }
     public function gallery()
     {
-        return view('frontend/gallery');
+        $data['getRecords'] = GalleryModel::getRecordsImage();
+        return view('frontend/gallery', $data);
     }
     public function admissionCommittee()
     {

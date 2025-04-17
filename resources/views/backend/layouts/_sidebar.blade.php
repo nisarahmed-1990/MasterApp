@@ -217,7 +217,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a @if(Request::segment(1)!= 'gallery_list')collapsed @endif href="{{ route('gallery_list') }}">
               <i class="bi bi-circle"></i><span>Gallery</span>
             </a>
           </li>
