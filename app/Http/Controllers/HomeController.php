@@ -20,6 +20,7 @@ use App\Models\AcademicCalendarModel;
 use App\Models\NonTeachingStaffModel;
 use App\Models\principalMessageModel;
 use App\Models\secreatoryMessageModel;
+use App\Models\AdmissionCommitteeModel;
 use App\Models\AdmissionProcedureModel;
 use App\Models\AdministrativeCouncilModel;
 
@@ -151,7 +152,8 @@ class HomeController extends Controller
     }
     public function admissionCommittee()
     {
-        return view('frontend/admissionCommittee');
+        $data['getRecords'] = AdmissionCommitteeModel::getRecords();
+        return view('frontend/admissionCommittee',$data);
     }
     public function ScStCommittee()
     {

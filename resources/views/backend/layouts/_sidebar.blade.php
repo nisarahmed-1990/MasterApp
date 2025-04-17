@@ -233,7 +233,7 @@
          </a>
          <ul id="Committees-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
            <li>
-             <a href="">
+             <a @if(Request::segment(1)!= 'gallery_list')collapsed @endif href="{{ route('admComm_list') }}">
                <i class="bi bi-circle"></i><span>Admission Committee</span>
              </a>
            </li>

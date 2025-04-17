@@ -22,6 +22,7 @@ use App\Http\Controllers\AcademicCalendarController;
 use App\Http\Controllers\NonTeachingStaffController;
 use App\Http\Controllers\PrincipalMessageController;
 use App\Http\Controllers\SecreatoryMessageController;
+use App\Http\Controllers\AdmissionCommitteeController;
 use App\Http\Controllers\AdmissionProcedureController;
 use App\Http\Controllers\AdministrativeCouncilController;
 
@@ -261,4 +262,13 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::post('gallery_edit/{id}',[GalleryController::class,'gallery_update'])->name('gallery_update');
         Route::get('gallery_delete/{id}',[GalleryController::class,'gallery_delete'])->name('gallery_delete');
         // Gallery Items  routes Endss here
+
+        // Admission Committee routes starts here
+        Route::get('admComm_list',[AdmissionCommitteeController::class,'admComm_list'])->name('admComm_list');
+        Route::get('admComm_add',[AdmissionCommitteeController::class,'admComm_add'])->name('admComm_add');
+        Route::post('admComm_add',[AdmissionCommitteeController::class,'admComm_insert'])->name('admComm_insert');
+        Route::get('admComm_edit/{id}',[AdmissionCommitteeController::class,'admComm_edit'])->name('admComm_edit');
+        Route::post('admComm_edit/{id}',[AdmissionCommitteeController::class,'admComm_update'])->name('admComm_update');
+        Route::get('admComm_delete/{id}',[AdmissionCommitteeController::class,'admComm_delete'])->name('admComm_delete');
+        // Admission Committee routes Endss here
 });
