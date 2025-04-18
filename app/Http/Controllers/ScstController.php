@@ -2,25 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ScstModel;
 use Illuminate\Http\Request;
-use App\Models\AdmissionCommitteeModel;
 use Illuminate\Support\Facades\Storage;
 Use Str;
 
-class AdmissionCommitteeController extends Controller
+class ScstController extends Controller
 {
-    public function admComm_list()
+    public function scstComm_list()
     {
-        $data['getRecords'] = AdmissionCommitteeModel::getRecords();
-        return view('backend/committees/admissionCommittee/admComm_list',$data);
+        $data['getRecords'] = ScstModel::getRecords();
+        return view('backend/committees/scstCell/scstComm_list',$data);
+    }
+    public function scstComm_add()
+    {
+        return view('backend/committees/scstCell/scstComm_add');
     }
 
-    public function admComm_add()
-    {
-        return view('backend/committees/admissionCommittee/admComm_add');
-    }
-
-    public function admComm_insert(Request $request)
+    public function scstComm_insert(Request $request)
     {
         $request->validate([
 
@@ -40,7 +39,7 @@ class AdmissionCommitteeController extends Controller
          $filename = trim($request->title); // Create a filename
          $path = $file->storeAs('pdfs', $filename, 'public'); // Store the file
 
-         AdmissionCommitteeModel::create([
+         ScstModel::create([
 
                 'title' => $request->title,
                 'vision' => $request->vision,
@@ -50,16 +49,16 @@ class AdmissionCommitteeController extends Controller
                 'committee_members' => $request->committee_members,
                 'image_path' => $path,
             ]);
-            return redirect('admComm_list')->with('success','Admission Committee added successfully');
+            return redirect('scstComm_list')->with('success','SC and ST Committee added successfully');
 
     }
-    public function admComm_edit($id)
+    public function scstComm_edit($id)
     {
-        $data['getRecord'] = AdmissionCommitteeModel::getSingle($id);
-        return view('backend/committees/admissionCommittee/admComm_edit',$data);
+        $data['getRecord'] = ScstModel::getSingle($id);
+        return view('backend/committees/scstCell/scstComm_edit',$data);
     }
 
-    public function admComm_update($id, Request $request)
+    public function scstComm_update($id, Request $request)
     {
         $request->validate([
             'title' => 'required|string',
@@ -72,36 +71,35 @@ class AdmissionCommitteeController extends Controller
         ]);
 
         // Find the existing record by its ID (assuming you pass the ID in the request)
-        $admissionCommittee = AdmissionCommitteeModel::findOrFail($request->id);
+        $scstCommittee = ScstModel::findOrFail($request->id);
 
         // Update the attributes
-        $admissionCommittee->title = $request->title;
-        $admissionCommittee->vision = $request->vision;
-        $admissionCommittee->mission = $request->mission;
-        $admissionCommittee->objectives = $request->objectives;
-        $admissionCommittee->committee_convenor = $request->committee_convenor;
-        $admissionCommittee->committee_members = $request->committee_members;
+        $scstCommittee->title = $request->title;
+        $scstCommittee->vision = $request->vision;
+        $scstCommittee->mission = $request->mission;
+        $scstCommittee->objectives = $request->objectives;
+        $scstCommittee->committee_convenor = $request->committee_convenor;
+        $scstCommittee->committee_members = $request->committee_members;
 
         // Handle the PDF file upload if a new file is provided
         if ($request->hasFile('pdf')) {
             $file = $request->file('pdf');
             $filename = trim($request->title); // Create a filename
             $path = $file->storeAs('pdfs', $filename, 'public'); // Store the file
-            $admissionCommittee->image_path = $path; // Update the image path
+            $scstCommittee->image_path = $path; // Update the image path
         }
 
         // Save the updated record
-        $admissionCommittee->save();
-        return redirect('admComm_list')->with('success','Admission Committee updated successfully');
+        $scstCommittee->save();
+        return redirect('scstComm_list')->with('success','SC and ST Committee updated successfully');
     }
-    public function admComm_delete($id)
+
+    public function scstComm_delete($id)
     {
-        $save = AdmissionCommitteeModel::getSingle($id);
+        $save = ScstModel::getSingle($id);
         $save->is_delete = 1;
         $save->save();
-        return redirect()->back()->with('success','Admission Committee deleted successfully');
+        return redirect()->back()->with('success','SC and ST Committee deleted successfully');
     }
-
-
 
 }

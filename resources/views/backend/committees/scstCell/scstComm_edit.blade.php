@@ -8,8 +8,8 @@
 <div class="pagetitle">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Edit Admission Committee
-            <a href="{{ route('admComm_list') }}" class="btn btn-danger btn-sm" style="float: right"><i class="bi bi-arrow-left"></i>Back</a>
+          <h5 class="card-title">Edit SC & ST Committee
+            <a href="{{ route('scstComm_list') }}" class="btn btn-danger btn-sm" style="float: right"><i class="bi bi-arrow-left"></i>Back</a>
           </h5>
 
           <!-- Vertical Form -->

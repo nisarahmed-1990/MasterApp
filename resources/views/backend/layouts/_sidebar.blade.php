@@ -233,12 +233,12 @@
          </a>
          <ul id="Committees-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
            <li>
-             <a @if(Request::segment(1)!= 'gallery_list')collapsed @endif href="{{ route('admComm_list') }}">
+             <a @if(Request::segment(1)!= 'admComm_list')collapsed @endif href="{{ route('admComm_list') }}">
                <i class="bi bi-circle"></i><span>Admission Committee</span>
              </a>
            </li>
            <li>
-            <a href="">
+            <a @if(Request::segment(1)!= 'scstComm_list')collapsed @endif href="{{ route('scstComm_list') }}">
               <i class="bi bi-circle"></i><span>SC & ST Committee</span>
             </a>
           </li>

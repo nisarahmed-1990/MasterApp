@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ScstController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\CarouselController;
@@ -271,4 +272,13 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::post('admComm_edit/{id}',[AdmissionCommitteeController::class,'admComm_update'])->name('admComm_update');
         Route::get('admComm_delete/{id}',[AdmissionCommitteeController::class,'admComm_delete'])->name('admComm_delete');
         // Admission Committee routes Endss here
+
+        // Sc and ST Committee routes starts here
+        Route::get('scstComm_list',[ScstController::class,'scstComm_list'])->name('scstComm_list');
+        Route::get('scstComm_add',[ScstController::class,'scstComm_add'])->name('scstComm_add');
+        Route::post('scstComm_add',[ScstController::class,'scstComm_insert'])->name('scstComm_insert');
+        Route::get('scstComm_edit/{id}',[ScstController::class,'scstComm_edit'])->name('scstComm_edit');
+        Route::post('scstComm_edit/{id}',[ScstController::class,'scstComm_update'])->name('scstComm_update');
+        Route::get('scstComm_delete/{id}',[ScstController::class,'scstComm_delete'])->name('admComm_delete');
+        // Sc and ST Committee routes Endss here
 });

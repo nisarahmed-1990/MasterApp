@@ -8,8 +8,8 @@
 <div class="pagetitle">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Edit Admission Committee
-            <a href="{{ route('admComm_list') }}" class="btn btn-danger btn-sm" style="float: right"><i class="bi bi-arrow-left"></i>Back</a>
+          <h5 class="card-title">Add SC & ST Committee
+            <a href="{{ route('scstComm_list') }}" class="btn btn-danger btn-sm" style="float: right"><i class="bi bi-arrow-left"></i>Back</a>
           </h5>
 
           <!-- Vertical Form -->
@@ -19,8 +19,8 @@
             <div class="col-lg-12">
                 <div class="card">
                   <label for="" class="card-title">Vision</label>
-                    <textarea class="tinymce-editor" name="vision"  style="text-align: justify">
-                    {{ $getRecord->vision }}
+                    <textarea class="tinymce-editor" name="vision" style="text-align: justify">
+
                     </textarea>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 <div class="card">
                   <label for="" class="card-title">Mission</label>
                     <textarea class="tinymce-editor" name="mission" style="text-align: justify">
-                        {{ $getRecord->mission }}
+
                     </textarea>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <div class="card">
                   <label for="" class="card-title">Objectives</label>
                     <textarea class="tinymce-editor" name="objectives" style="text-align: justify">
-                        {{ $getRecord->objectives }}
+
                     </textarea>
                 </div>
             </div>
@@ -50,7 +50,7 @@
 
             <div class="col-12">
                 <label for="inputNanme4" class="form-label card-title">Committee Convenor</label>
-                <input type="text" class="form-control" value="{{ $getRecord->committee_convenor }}" id="inputNanme4" name='committee_convenor'>
+                <input type="text" class="form-control" id="inputNanme4" name='committee_convenor'>
             </div>
 
             <!-- TinyMCE Editor -->
@@ -58,7 +58,7 @@
                 <div class="card">
                   <label for="" class="card-title">Committee Members</label>
                     <textarea class="tinymce-editor" name="committee_members" style="text-align: justify">
-                        {{ $getRecord->committee_members }}
+
                     </textarea>
                 </div>
             </div>
@@ -66,13 +66,14 @@
 
             <div class="col-12">
                 <label for="inputNanme4" class="form-label card-title">Report Name</label>
-                <input type="text" class="form-control" id="inputNanme4" name='title' value="{{ $getRecord->title }}">
+                <input type="text" class="form-control" id="inputNanme4" name='title'>
               </div>
 
               <div class="col-12">
-                <label for="inputEmail4" class="form-label card-title">Upload File</label>
+                <label for="inputEmail4" class="form-label card-title">Upload File <span style="color: red">Max File Size: 7MB</span></label>
                 <input type="file" class="form-control" name="pdf" id="pdf" accept="application/pdf" required>
-              </div>
+
+            </div>
 
               <div class="text-center">
                 <button style="float: left" type="submit" onclick="myFunction()" class="btn btn-primary">Submit</button>
@@ -90,12 +91,12 @@
             var pdfInput = document.getElementById("pdf");
             if (pdfInput.files.length > 0) {
                 let pdfFileSize = pdfInput.files[0].size; // Get the size of the first file
-                if (pdfFileSize > 700000) { // Check if the file size exceeds 7 MB
+                if (pdfFileSize > 7000000) { // Check if the file size exceeds 7 MB
                     alert("PDF file size is exceeding 7 MB");
                     e.preventDefault(); // Prevent form submission
                 }
             } else {
-
+                alert("Please select a PDF file to upload.");
                 e.preventDefault(); // Prevent form submission if no file is selected
             }
         };

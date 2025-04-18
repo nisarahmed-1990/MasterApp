@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carousel;
+use App\Models\ScstModel;
 use App\Models\GalleryModel;
 use Illuminate\Http\Request;
 use App\Models\TimeTableModel;
@@ -157,7 +158,8 @@ class HomeController extends Controller
     }
     public function ScStCommittee()
     {
-        return view('frontend/ScStCommittee');
+        $data['getRecords'] = ScstModel::getRecords();
+        return view('frontend/ScStCommittee', $data);
     }
     public function minorityCell()
     {
