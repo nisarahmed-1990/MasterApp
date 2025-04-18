@@ -279,7 +279,7 @@
          </a>
          <ul id="IQAC-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
            <li>
-             <a href="">
+             <a @if(Request::segment(1)!= 'aboutIqac_list')collapsed @endif href="{{ route('aboutIqac_list') }}">
                <i class="bi bi-circle"></i><span>About IQAC</span>
              </a>
            </li>

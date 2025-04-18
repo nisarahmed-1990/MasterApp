@@ -27,30 +27,47 @@
           </div>
         <div class="container main-section ">
             <div class="row">
-                {{-- <div class="col-md-6">
-                    <img src="{{ url('assets/apj.png') }}" class="img-fluid" alt="Kids and Teacher">
+                @foreach ($getRecords as $value)
+                {{-- <div>
+                    <img src="{{ asset('upload/aboutCollege/'.$value->image_path) }}" class="d-block w-100" id="image1">
                 </div> --}}
+                 @endforeach
                 <div class="col-md-12">
                     <h4 class="card-title">About IQAC  <span class="line"></span></h4>
-                        <p style="text-align:justify; margin-top:10px;">
-                        I am greatly rejoiced and proudly place on record the fact that Your College Name Arts,Science, Commerce College your city name, Dist Gadag, State Karnataka, is the visionary dream of its founder Late Sri Sanganagouda Patil humble servant of education whose little mission, a many decade ago to transform a small college into a big one, has unfolded into an institution of glorious past and great future.
-
-                        In order to accomplish our vision and mission, we are prepared to take as much effort as possible
-                        for the betterment of academic scenario in India. We believe that education is an effective medium of social transformation.
-                        We get encouragement, looking at bright and successful career of our thousands of students, which subsequently benefit the society.
-                        We feel proud that we are part of such an excellent institute, which is shaping modern India.
-                    </p>
+                    <p> {!! $value->aboutiqac !!}</p>
                 </div>
-                <p style="text-align:justify"> Your College Name Arts,Science, Commerce College endowed with progressive futuristic outlook, which aims at continual growth in the quality of all academic activities with the sense of commitment to fully meet the expectations of the students, parents and society at large.
-
-                    Our college cares for the individual development of each and every student. We follow “Mentor System”
-                    under which each class is put into the multipronged web of a teacher. We accord prime importance to the behavioral discipline,
-                    moral integrity and cognitive developments of our students. Departments of Youth Welfare, NSS, Physical Education, Career Guidance Cell,
-                    Readers Forum, Red Cross Society, Red Ribbon Club and Centre for Women Empowerment cell offer integrated services for the multi –faceted
-                    developments of our students. Our teachers strive to teach not only academic programme but also life skills that are needed for student’s
-                    self development with highly resourceful faculty.
-                    In order to make our students academically strong with inspiring vision of goal setting future.</p>
             </div>
+            <p style="font-size:20px; color:#4B49B6;">IQAC Establishment Year<span class="line-4"></span> {!! $value->iqacestb !!}</p>
+            <p style="font-size:20px; color:#4B49B6;">IQAC Coordinator<span class="line-4"></span> {!! $value->iqacco !!}</p>
+            <p style="font-size:20px; color:#4B49B6;">Committee Members<span class="line-4"></p>
+                <p>
+                    {!! $value->committee_members !!}
+                </p>
+                <table class="table table-striped table-hover table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Report </th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @php
+                            $i=0;
+                        @endphp
+                        @foreach ($getRecords as $pdf)
+                        @php
+                            $i++;
+                        @endphp
+                        <tr>
+                            <th scope="row">{{ $i }}</th>
+                            <td>{{ $pdf->title }} <td>
+                                <a class="btn btn-primary btn-sm" href="{{ asset('storage/pdfs/' . $pdf->title) }}" target="_blank">view</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                  </table>
         </div>
       </div>
 

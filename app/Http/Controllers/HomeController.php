@@ -10,6 +10,7 @@ use App\Models\AshcModel;
 use App\Models\ScstModel;
 use App\Models\GalleryModel;
 use Illuminate\Http\Request;
+use App\Models\AboutIqacModel;
 use App\Models\TimeTableModel;
 use App\Models\PgsyllabusModel;
 use App\Models\UgsyllabusModel;
@@ -193,7 +194,8 @@ class HomeController extends Controller
     }
     public function aboutIQAC()
     {
-        return view('frontend/aboutIQAC');
+        $data['getRecords'] = AboutIqacModel::getRecords();
+        return view('frontend/aboutIQAC', $data);
     }
     public function aqarReports()
     {

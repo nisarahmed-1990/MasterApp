@@ -11,6 +11,7 @@ use App\Http\Controllers\ScstController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\AboutIqacController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TimeTableController;
 use App\Http\Controllers\PGSyllabusController;
@@ -331,4 +332,13 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::post('wec_edit/{id}',[WecController::class,'wec_update'])->name('wec_update');
         Route::get('wec_delete/{id}',[WecController::class,'wec_delete'])->name('wec_delete');
         // Women Empowerment Cell routes Ends here
+
+        // About IQAC routes starts here
+        Route::get('aboutIqac_list',[AboutIqacController::class,'aboutIqac_list'])->name('aboutIqac_list');
+        Route::get('aboutIqac_add',[AboutIqacController::class,'aboutIqac_add'])->name('aboutIqac_add');
+        Route::post('aboutIqac_add',[AboutIqacController::class,'aboutIqac_insert'])->name('aboutIqac_insert');
+        Route::get('aboutIqac_edit/{id}',[AboutIqacController::class,'aboutIqac_edit'])->name('aboutIqac_edit');
+        Route::post('aboutIqac_edit/{id}',[AboutIqacController::class,'aboutIqac_update'])->name('aboutIqac_update');
+        Route::get('aboutIqac_delete/{id}',[AboutIqacController::class,'aboutIqac_delete'])->name('aboutIqac_delete');
+        // About IQAC routes Ends here
 });
