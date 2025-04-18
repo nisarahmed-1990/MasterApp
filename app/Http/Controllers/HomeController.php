@@ -12,6 +12,7 @@ use App\Models\UgsyllabusModel;
 use App\Models\AboutCollegeModel;
 use App\Models\AboutLibraryModel;
 use App\Models\LibraryRulesModel;
+use App\Models\MinorityCellModel;
 use App\Models\NotificationModel;
 use App\Models\teachingStaffModel;
 use App\Models\LibraryServiceModel;
@@ -163,7 +164,8 @@ class HomeController extends Controller
     }
     public function minorityCell()
     {
-        return view('frontend/minorityCell');
+        $data['getRecords'] = MinorityCellModel::getRecords();
+        return view('frontend/minorityCell',$data);
     }
     public function grc()
     {
