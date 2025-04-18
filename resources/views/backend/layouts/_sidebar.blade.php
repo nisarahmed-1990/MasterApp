@@ -284,7 +284,7 @@
              </a>
            </li>
            <li>
-            <a href="">
+            <a @if(Request::segment(1)!= 'aqarReports_list')collapsed @endif href="{{route('aqarReports_list')}}">
               <i class="bi bi-circle"></i><span>AQAR Reports</span>
             </a>
           </li>

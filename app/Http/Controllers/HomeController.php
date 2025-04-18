@@ -14,6 +14,7 @@ use App\Models\AboutIqacModel;
 use App\Models\TimeTableModel;
 use App\Models\PgsyllabusModel;
 use App\Models\UgsyllabusModel;
+use App\Models\AqarReportsModel;
 use App\Models\AboutCollegeModel;
 use App\Models\AboutLibraryModel;
 use App\Models\LibraryRulesModel;
@@ -199,7 +200,8 @@ class HomeController extends Controller
     }
     public function aqarReports()
     {
-        return view('frontend/aqarReports');
+        $data['getRecords'] = AqarReportsModel::getRecords();
+        return view('frontend/aqarReports', $data);
     }
     public function ssrReports()
     {
