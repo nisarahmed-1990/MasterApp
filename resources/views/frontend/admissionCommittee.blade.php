@@ -41,9 +41,9 @@
                     <p>
                         {!! $value->objectives !!}
                     </p>
-                <p style="font-size:20px; color:#4B49B6;">Committee Convenor: {!! $value->committee_convenor !!}<span class="line-4"></p>
-                    <p style="font-size:20px; color:#4B49B6;">Committee Members<span class="line-4"></p>
-                        <p>
+                    <p style="font-size:20px; color:#4B49B6;">Committee Convenor<span class="line-4"></span> {!! $value->committee_convenor !!}</p>
+                    <p style="font-size:20px; color:#4B49B6;">Committee Members<span class="line-4"></span></p>
+                        <p style="margin-top:-30px;">
                             {!! $value->committee_members !!}
                         </p>
                     <table class="table table-striped table-hover table-dark">
