@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ArcModel;
 use App\Models\Carousel;
 use App\Models\GrcModel;
+use App\Models\WecModel;
 use App\Models\AshcModel;
 use App\Models\ScstModel;
 use App\Models\GalleryModel;
@@ -187,7 +188,8 @@ class HomeController extends Controller
     }
     public function wec()
     {
-        return view('frontend/wec');
+        $data['getRecords'] = WecModel::getRecords();
+        return view('frontend/wec',$data);
     }
     public function aboutIQAC()
     {

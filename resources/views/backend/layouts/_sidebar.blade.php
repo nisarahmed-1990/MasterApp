@@ -263,7 +263,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a @if(Request::segment(1)!= 'wec_list')collapsed @endif href="{{route('wec_list')}}">
               <i class="bi bi-circle"></i><span>Women Empowerment Cell</span>
             </a>
           </li>

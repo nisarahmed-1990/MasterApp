@@ -70,9 +70,12 @@
               </div>
 
               <div class="col-12">
-                <label for="inputEmail4" class="form-label card-title">Upload File<span style="color: r">Max File Size: 7MB</span></label>
+                <label for="inputEmail4" class="form-label card-title">Upload Files <span style="color: red">Max File Size: 7M</span></label>
                 <input type="file" class="form-control" name="pdf" id="pdf" accept="application/pdf" required>
-              </div>
+                <span style="color: red">If you want to update the PDF file, you can upload from here
+                    or else upload previous PDF file
+                </span>
+            </div>
 
               <div class="text-center">
                 <button style="float: left" type="submit" onclick="myFunction()" class="btn btn-primary">Submit</button>

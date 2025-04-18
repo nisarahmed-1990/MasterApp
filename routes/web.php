@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArcController;
 use App\Http\Controllers\GrcController;
+use App\Http\Controllers\WecController;
 use App\Http\Controllers\AshcController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -321,4 +322,13 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::post('ashc_edit/{id}',[AshcController::class,'ashc_update'])->name('ashc_update');
         Route::get('ashc_delete/{id}',[AshcController::class,'ashc_delete'])->name('ashc_delete');
         // Anit Sexual Harassment Cell routes Ends here
+
+        // Women Empowerment Cell routes starts here
+        Route::get('wec_list',[WecController::class,'wec_list'])->name('wec_list');
+        Route::get('wec_add',[WecController::class,'wec_add'])->name('wec_add');
+        Route::post('wec_add',[WecController::class,'wec_insert'])->name('wec_insert');
+        Route::get('wec_edit/{id}',[WecController::class,'wec_edit'])->name('wec_edit');
+        Route::post('wec_edit/{id}',[WecController::class,'wec_update'])->name('wec_update');
+        Route::get('wec_delete/{id}',[WecController::class,'wec_delete'])->name('wec_delete');
+        // Women Empowerment Cell routes Ends here
 });
