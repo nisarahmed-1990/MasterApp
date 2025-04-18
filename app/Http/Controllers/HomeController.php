@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ArcModel;
 use App\Models\Carousel;
 use App\Models\GrcModel;
 use App\Models\ScstModel;
@@ -175,7 +176,8 @@ class HomeController extends Controller
     }
     public function arc()
     {
-        return view('frontend/arc');
+        $data['getRecords'] = ArcModel::getRecords();
+        return view('frontend/arc', $data);
     }
     public function ashc()
     {

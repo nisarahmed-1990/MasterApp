@@ -253,7 +253,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a @if(Request::segment(1)!= 'arc_list')collapsed @endif href="{{ route('arc_list') }}">
               <i class="bi bi-circle"></i><span>Anit Ragging Committee</span>
             </a>
           </li>

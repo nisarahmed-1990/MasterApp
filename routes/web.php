@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArcController;
 use App\Http\Controllers\GrcController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -301,4 +302,13 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::post('grc_edit/{id}',[GrcController::class,'grc_update'])->name('grc_update');
         Route::get('grc_delete/{id}',[GrcController::class,'grc_delete'])->name('grc_delete');
         // Grievance Redressal Committee routes Ends here
+
+        // Anit Ragging Committee routes starts here
+        Route::get('arc_list',[ArcController::class,'arc_list'])->name('arc_list');
+        Route::get('arc_add',[ArcController::class,'arc_add'])->name('arc_add');
+        Route::post('arc_add',[ArcController::class,'arc_insert'])->name('arc_insert');
+        Route::get('arc_edit/{id}',[ArcController::class,'arc_edit'])->name('arc_edit');
+        Route::post('arc_edit/{id}',[ArcController::class,'arc_update'])->name('arc_update');
+        Route::get('arc_delete/{id}',[ArcController::class,'arc_delete'])->name('arc_delete');
+        // Anit Ragging Committee routes Ends here
 });
