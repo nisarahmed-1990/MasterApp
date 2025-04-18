@@ -16,7 +16,7 @@ class AdmissionCommitteeModel extends Model
     {
         return self::select('admissioncommittees.*')
         ->where('is_delete','=',0)
-        ->orderBy('admissioncommittees.id', 'asc')
+        ->orderBy('admissioncommittees.id', 'desc')
         ->paginate(10);
     }
 

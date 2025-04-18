@@ -24,12 +24,12 @@ class MinorityCellController extends Controller
     {
         $request->validate([
 
-            'title' => 'required|string',
-            'vision' => 'required|string',
-            'mission' => 'required|string',
-            'objectives' => 'required|string',
-            'committee_convenor' => 'required|string',
-            'committee_members' => 'required|string',
+            'title' => 'nullable|string',
+            'vision' => 'nullable|string',
+            'mission' => 'nullable|string',
+            'objectives' => 'nullable|string',
+            'committee_convenor' => 'nullable|string',
+            'committee_members' => 'nullable|string',
             'pdf' => 'required|mimes:pdf|max:7168', // Max size 7MB
 
         ]);
@@ -61,12 +61,12 @@ class MinorityCellController extends Controller
     public function minorityCell_update($id, Request $request)
     {
         $request->validate([
-            'title' => 'required|string',
-            'vision' => 'required|string',
-            'mission' => 'required|string',
-            'objectives' => 'required|string',
-            'committee_convenor' => 'required|string',
-            'committee_members' => 'required|string',
+            'title' => 'nullable|string',
+            'vision' => 'nullable|string',
+            'mission' => 'nullable|string',
+            'objectives' => 'nullable|string',
+            'committee_convenor' => 'nullable|string',
+            'committee_members' => 'nullable|string',
             'pdf' => 'nullable|mimes:pdf|max:700000', // Max size 7MB, make it nullable for updates
         ]);
 

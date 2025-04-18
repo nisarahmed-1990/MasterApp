@@ -15,7 +15,7 @@ class ScstModel extends Model
     {
         return self::select('stsccommittees.*')
         ->where('is_delete','=',0)
-        ->orderBy('stsccommittees.id', 'asc')
+        ->orderBy('stsccommittees.id', 'desc')
         ->paginate(10);
     }
 

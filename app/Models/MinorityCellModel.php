@@ -15,7 +15,7 @@ class MinorityCellModel extends Model
     {
         return self::select('minoritycells.*')
         ->where('is_delete','=',0)
-        ->orderBy('minoritycells.id', 'asc')
+        ->orderBy('minoritycells.id', 'desc')
         ->paginate(10);
     }
 
