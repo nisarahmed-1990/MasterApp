@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ArcModel;
 use App\Models\Carousel;
 use App\Models\GrcModel;
+use App\Models\AshcModel;
 use App\Models\ScstModel;
 use App\Models\GalleryModel;
 use Illuminate\Http\Request;
@@ -181,7 +182,8 @@ class HomeController extends Controller
     }
     public function ashc()
     {
-        return view('frontend/ashc');
+        $data['getRecords'] = AshcModel::getRecords();
+        return view('frontend/ashc',$data);
     }
     public function wec()
     {

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArcController;
 use App\Http\Controllers\GrcController;
+use App\Http\Controllers\AshcController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ScstController;
@@ -311,4 +312,13 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::post('arc_edit/{id}',[ArcController::class,'arc_update'])->name('arc_update');
         Route::get('arc_delete/{id}',[ArcController::class,'arc_delete'])->name('arc_delete');
         // Anit Ragging Committee routes Ends here
+
+        // Anit Sexual Harassment Cell routes starts here
+        Route::get('ashc_list',[AshcController::class,'ashc_list'])->name('ashc_list');
+        Route::get('ashc_add',[AshcController::class,'ashc_add'])->name('ashc_add');
+        Route::post('ashc_add',[AshcController::class,'ashc_insert'])->name('ashc_insert');
+        Route::get('ashc_edit/{id}',[AshcController::class,'ashc_edit'])->name('ashc_edit');
+        Route::post('ashc_edit/{id}',[AshcController::class,'ashc_update'])->name('ashc_update');
+        Route::get('ashc_delete/{id}',[AshcController::class,'ashc_delete'])->name('ashc_delete');
+        // Anit Sexual Harassment Cell routes Ends here
 });

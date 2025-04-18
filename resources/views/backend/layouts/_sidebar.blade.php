@@ -258,7 +258,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a @if(Request::segment(1)!= 'ashc_list')collapsed @endif href="{{ route('ashc_list') }}">
               <i class="bi bi-circle"></i><span>Anit Sexual Harassment Cell</span>
             </a>
           </li>
