@@ -243,7 +243,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a @if(Request::segment(1)!= 'minorityCell_list')collapsed @endif href="{{ route('minorityCell_list') }}">
               <i class="bi bi-circle"></i><span>Minority Cell</span>
             </a>
           </li>

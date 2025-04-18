@@ -14,6 +14,7 @@ use App\Http\Controllers\UGSyllabusController;
 use App\Http\Controllers\AboutCollegeController;
 use App\Http\Controllers\AboutLibraryController;
 use App\Http\Controllers\LibraryRulesController;
+use App\Http\Controllers\MinorityCellController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TeachingStaffController;
 use App\Http\Controllers\LibraryServiceController;
@@ -262,7 +263,7 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::get('gallery_edit/{id}',[GalleryController::class,'gallery_edit'])->name('gallery_edit');
         Route::post('gallery_edit/{id}',[GalleryController::class,'gallery_update'])->name('gallery_update');
         Route::get('gallery_delete/{id}',[GalleryController::class,'gallery_delete'])->name('gallery_delete');
-        // Gallery Items  routes Endss here
+        // Gallery Items  routes Ends here
 
         // Admission Committee routes starts here
         Route::get('admComm_list',[AdmissionCommitteeController::class,'admComm_list'])->name('admComm_list');
@@ -271,7 +272,7 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::get('admComm_edit/{id}',[AdmissionCommitteeController::class,'admComm_edit'])->name('admComm_edit');
         Route::post('admComm_edit/{id}',[AdmissionCommitteeController::class,'admComm_update'])->name('admComm_update');
         Route::get('admComm_delete/{id}',[AdmissionCommitteeController::class,'admComm_delete'])->name('admComm_delete');
-        // Admission Committee routes Endss here
+        // Admission Committee routes Ends here
 
         // Sc and ST Committee routes starts here
         Route::get('scstComm_list',[ScstController::class,'scstComm_list'])->name('scstComm_list');
@@ -280,5 +281,14 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::get('scstComm_edit/{id}',[ScstController::class,'scstComm_edit'])->name('scstComm_edit');
         Route::post('scstComm_edit/{id}',[ScstController::class,'scstComm_update'])->name('scstComm_update');
         Route::get('scstComm_delete/{id}',[ScstController::class,'scstComm_delete'])->name('admComm_delete');
-        // Sc and ST Committee routes Endss here
+        // Sc and ST Committee routes Ends here
+
+        // Minority Cell routes starts here
+        Route::get('minorityCell_list',[MinorityCellController::class,'minorityCell_list'])->name('minorityCell_list');
+        Route::get('minorityCell_add',[MinorityCellController::class,'minorityCell_add'])->name('minorityCell_add');
+        Route::post('minorityCell_add',[MinorityCellController::class,'minorityCell_insert'])->name('minorityCell_insert');
+        Route::get('minorityCell_edit/{id}',[MinorityCellController::class,'minorityCell_edit'])->name('minorityCell_edit');
+        Route::post('minorityCell_edit/{id}',[MinorityCellController::class,'minorityCell_update'])->name('minorityCell_update');
+        Route::get('minorityCell_delete/{id}',[MinorityCellController::class,'minorityCell_delete'])->name('minorityCell_delete');
+        // Minority Cell routes Ends here
 });
