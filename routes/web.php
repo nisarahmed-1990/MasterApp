@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GrcController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ScstController;
@@ -290,5 +291,14 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::get('minorityCell_edit/{id}',[MinorityCellController::class,'minorityCell_edit'])->name('minorityCell_edit');
         Route::post('minorityCell_edit/{id}',[MinorityCellController::class,'minorityCell_update'])->name('minorityCell_update');
         Route::get('minorityCell_delete/{id}',[MinorityCellController::class,'minorityCell_delete'])->name('minorityCell_delete');
-        // Minority Cell routes Ends here
+        // Minority Cell routes Ends
+
+        // Grievance Redressal Committee routes starts here
+        Route::get('grc_list',[GrcController::class,'grc_list'])->name('grc_list');
+        Route::get('grc_add',[GrcController::class,'grc_add'])->name('grc_add');
+        Route::post('grc_add',[GrcController::class,'grc_insert'])->name('grc_insert');
+        Route::get('grc_edit/{id}',[GrcController::class,'grc_edit'])->name('grc_edit');
+        Route::post('grc_edit/{id}',[GrcController::class,'grc_update'])->name('grc_update');
+        Route::get('grc_delete/{id}',[GrcController::class,'grc_delete'])->name('grc_delete');
+        // Grievance Redressal Committee routes Ends here
 });

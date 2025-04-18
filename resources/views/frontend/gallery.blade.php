@@ -37,7 +37,7 @@
     <img class="lightboxed" rel="group1" src="{{ url('img/portfolio-5.jpg') }}"  alt="Image Alt" data-caption="Image Caption" />
     <img class="lightboxed" rel="group1" src="{{ url('img/portfolio-6.jpg') }}"  alt="Image Alt" data-caption="Image Caption" /> --}}
     @foreach ($getRecords as $value)
-    <img style="width: 300px;height:250px" class="lightboxed" rel="group1" src="{{ asset('upload/gallery/'.$value->image_path) }}"  alt="Image Alt" data-caption="{!! $value->title !!}" />
+    <img style="width: 300px;height:250px;" class="lightboxed" rel="group1" src="{{ asset('upload/gallery/'.$value->image_path) }}"  alt="Image Alt" data-caption="{!! $value->title !!}" />
     @endforeach
 </div>
 

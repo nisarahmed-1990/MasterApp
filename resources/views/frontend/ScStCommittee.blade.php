@@ -38,7 +38,7 @@
                  <p>
                     {!! $value->objectives !!}
                  </p>
-                <p style="font-size:20px; color:#4B49B6;">Committee Convenor: Dr. N.N. Yaragudi<span class="line-4"></p>
+                 <p style="font-size:20px; color:#4B49B6;">Committee Convenor<span class="line-4"></span> {!! $value->committee_convenor !!}</p>
                     <p style="font-size:20px; color:#4B49B6;">Committee Members<span class="line-4"></p>
                         <p style="margin-top:-30px;">
                             {!! $value->committee_members !!}

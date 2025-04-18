@@ -24,40 +24,28 @@
             <div class="row">
                 <div class="col-md-6">
                     <p style="font-size:20px; color:#4B49B6;">Vission<span class="line-4"></p>
-                    <p>"To educate and elevate the rural poor”</p>
+                        @foreach ($getRecords as $value)
+                        {{-- <div>
+                            <img src="{{ asset('upload/aboutCollege/'.$value->image_path) }}" class="d-block w-100" id="image1">
+                        </div> --}}
+                         @endforeach
+                        <p> {!! $value->vision !!}</p>
                 </div>
                 <div class="col-md-6">
                     <p style="font-size:20px; color:#4B49B6;">Mission<span class="line-4"></p>
-                    <p>"To propagate quality education for rural people that instills a deep concern for the society and service to humanity"</p>
+                        <p>{!! $value->mission !!}</p>
 
                 </div>
 
                 <p style="font-size:20px; color:#4B49B6;">Objectives<span class="line-4"></p>
                     <p>
-                        1. To create a sense of social responsibility amongst students and create the potential to tackle socio-economic problems of community
-                        in which we live.
-
-                        <br> 2. To create persons not only physically strong but also mentally and spiritually.
-
-                        <br> 3. To provide opportunities to rural women, SC/ST and other backward class to develop themselves.
-
-                        <br> 4. To create Scientific Outlook and Competitive spirit.
-
-                        <br> 5. To generate Self-Employment Opportunities.
-                </p>
-                <p style="font-size:20px; color:#4B49B6;">Committee Convenor: Dr. N.N. Yaragudi<span class="line-4"></p>
+                        {!! $value->objectives !!}
+                     </p>
+                     <p style="font-size:20px; color:#4B49B6;">Committee Convenor<span class="line-4"></span> {!! $value->committee_convenor !!}</p>
                     <p style="font-size:20px; color:#4B49B6;">Committee Members<span class="line-4"></p>
-                        <p>
-                            1. Member Name
-
-                            <br> 2. Member Name
-
-                            <br> 3. Member Name
-
-                            <br> 4. Member Name
-
-                            <br> 5.Member Name
-                    </p>
+                        <p style="margin-top:-30px;">
+                            {!! $value->committee_members !!}
+                        </p>
                     <table class="table table-striped table-hover table-dark">
                         <thead>
                           <tr>
@@ -67,12 +55,21 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>@mdo</td>
-                          </tr>
-                         </tbody>
+                            @php
+                                $i=0;
+                            @endphp
+                            @foreach ($getRecords as $pdf)
+                            @php
+                                $i++;
+                            @endphp
+                            <tr>
+                                <th scope="row">{{ $i }}</th>
+                                <td>{{ $pdf->title }} <td>
+                                    <a class="btn btn-primary btn-sm" href="{{ asset('storage/pdfs/' . $pdf->title) }}" target="_blank">view</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
                       </table>
             </div>
         </div>

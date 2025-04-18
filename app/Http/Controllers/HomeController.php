@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carousel;
+use App\Models\GrcModel;
 use App\Models\ScstModel;
 use App\Models\GalleryModel;
 use Illuminate\Http\Request;
@@ -169,7 +170,8 @@ class HomeController extends Controller
     }
     public function grc()
     {
-        return view('frontend/grc');
+        $data['getRecords'] = GrcModel::getRecords();
+        return view('frontend/grc', $data);
     }
     public function arc()
     {

@@ -248,7 +248,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a @if(Request::segment(1)!= 'grc_list')collapsed @endif href="{{ route('grc_list') }}">
               <i class="bi bi-circle"></i><span>Grievance Redressal Committee</span>
             </a>
           </li>
