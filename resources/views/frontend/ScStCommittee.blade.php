@@ -60,7 +60,7 @@
                                 $i++;
                             @endphp
                             <tr>
-                                <th scope="row">{{ $pdf->id }}</th>
+                                <th scope="row">{{ $i }}</th>
                                 <td>{{ $pdf->title }} <td>
                                     <a class="btn btn-primary btn-sm" href="{{ asset('storage/pdfs/' . $pdf->title) }}" target="_blank">view</a>
                                 </td>
