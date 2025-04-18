@@ -8,8 +8,8 @@
 <div class="pagetitle">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Add AQAR Reports
-            <a href="{{ route('aqarReports_list') }}" class="btn btn-danger btn-sm" style="float: right; text-align:center"><span style="color: aliceblue">&#8592;</span></i> Back</a>
+          <h5 class="card-title">Add SSR Reports
+            <a href="{{ route('ssrReports_list') }}" class="btn btn-danger btn-sm" style="float: right; text-align:center"><span style="color: aliceblue">&#8592;</span></i> Back</a>
           </h5>
 
           <!-- Vertical Form -->

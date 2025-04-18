@@ -16,6 +16,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TimeTableController;
 use App\Http\Controllers\AqarReportController;
 use App\Http\Controllers\PGSyllabusController;
+use App\Http\Controllers\SsrReportsController;
 use App\Http\Controllers\UGSyllabusController;
 use App\Http\Controllers\AboutCollegeController;
 use App\Http\Controllers\AboutLibraryController;
@@ -351,4 +352,13 @@ Route::group(['middleware'=>'adminuser'],function(){
          Route::post('aqarReports_edit/{id}',[AqarReportController::class,'aqarReports_update'])->name('aqarReports_update');
          Route::get('aqarReports_delete/{id}',[AqarReportController::class,'aqarReports_delete'])->name('aqarReports_delete');
          // AQAR Reports routes Ends here
+
+        // AQAR Reports routes starts here
+           Route::get('ssrReports_list',[SsrReportsController::class,'ssrReports_list'])->name('ssrReports_list');
+           Route::get('ssrReports_add',[SsrReportsController::class,'ssrReports_add'])->name('ssrReports_add');
+           Route::post('ssrReports_add',[SsrReportsController::class,'ssrReports_insert'])->name('ssrReports_insert');
+           Route::get('ssrReports_edit/{id}',[SsrReportsController::class,'ssrReports_edit'])->name('ssrReports_edit');
+           Route::post('ssrReports_edit/{id}',[SsrReportsController::class,'ssrReports_update'])->name('ssrReports_update');
+           Route::get('ssrReports_delete/{id}',[SsrReportsController::class,'ssrReports_delete'])->name('ssrReports_delete');
+        // AQAR Reports routes Ends here
 });

@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Models\AboutIqacModel;
 use App\Models\TimeTableModel;
 use App\Models\PgsyllabusModel;
+use App\Models\SsrReportsModel;
 use App\Models\UgsyllabusModel;
 use App\Models\AqarReportsModel;
 use App\Models\AboutCollegeModel;
@@ -205,7 +206,8 @@ class HomeController extends Controller
     }
     public function ssrReports()
     {
-        return view('frontend/ssrReports');
+        $data['getRecords'] = SsrReportsModel::getRecords();
+        return view('frontend/ssrReports', $data);
     }
     public function aboutNAAC()
     {

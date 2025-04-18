@@ -32,18 +32,25 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Year of the Report</th>
-                        <th scope="col">Year</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                     </tbody>
+                        @php
+                            $i=0;
+                        @endphp
+                        @foreach ($getRecords as $pdf)
+                        @php
+                            $i++;
+                        @endphp
+                        <tr>
+                            <th scope="row">{{ $i }}</th>
+                            <td>{{ $pdf->title }} <td>
+                                <a class="btn btn-primary btn-sm" href="{{ asset('storage/pdfs/' . $pdf->title) }}" target="_blank">view</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
                   </table>
                  {{-- <div class="col-md-6">
                     <img src="{{ url('assets/apj.png') }}" class="img-fluid" alt="Kids and Teacher">
