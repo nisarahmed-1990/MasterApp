@@ -36,52 +36,21 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>University Affiliation Letters</td>
-                        <td><a href="">View</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>2(F)</td>
-                        <td><a href="">View</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>12 B</td>
-                        <td><a href="">View</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td>Programme Details (UG & PG)</td>
-                        <td><a href="">View</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5</th>
-                        <td>Statutory Declaration of RTI Act 2005</td>
-                        <td><a href="">View</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">6</th>
-                        <td>AISHE Certificate</td>
-                        <td><a href="">View</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">7</th>
-                        <td>Undertaking</td>
-                        <td><a href="">View</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">8</th>
-                        <td>AQAR's</td>
-                        <td><a href="">View</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">9</th>
-                        <td>IIQA</td>
-                        <td><a href="">View</a></td>
-                      </tr>
-                     </tbody>
+                        @php
+                            $i=0;
+                        @endphp
+                        @foreach ($getRecords as $pdf)
+                        @php
+                            $i++;
+                        @endphp
+                        <tr>
+                            <th scope="row">{{ $i }}</th>
+                            <td>{{ $pdf->title }} <td>
+                                <a class="btn btn-primary btn-sm" href="{{ asset('storage/pdfs/' . $pdf->title) }}" target="_blank">view</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
                   </table>
                  {{-- <div class="col-md-6">
                     <img src="{{ url('assets/apj.png') }}" class="img-fluid" alt="Kids and Teacher">

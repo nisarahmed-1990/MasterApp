@@ -310,6 +310,11 @@
              </a>
            </li>
            <li>
+            <a @if(Request::segment(1)!= 'collegeDocs_list')collapsed @endif href="{{ route('collegeDocs_list') }}">
+              <i class="bi bi-circle"></i><span>College Documents</span>
+            </a>
+          </li>
+           <li>
             <a href="">
               <i class="bi bi-circle"></i><span>Criterion 1</span>
             </a>

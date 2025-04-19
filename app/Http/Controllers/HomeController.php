@@ -16,6 +16,7 @@ use App\Models\PgsyllabusModel;
 use App\Models\SsrReportsModel;
 use App\Models\UgsyllabusModel;
 use App\Models\AqarReportsModel;
+use App\Models\CollegeDocsModel;
 use App\Models\AboutCollegeModel;
 use App\Models\AboutLibraryModel;
 use App\Models\LibraryRulesModel;
@@ -219,7 +220,8 @@ class HomeController extends Controller
     }
     public function collegeDocuments()
     {
-        return view('frontend/collegeDocuments');
+        $data['getRecords'] = CollegeDocsModel::getRecords();
+        return view('frontend/collegeDocuments', $data);
     }
     public function criterion2()
     {

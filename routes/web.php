@@ -18,6 +18,7 @@ use App\Http\Controllers\AqarReportController;
 use App\Http\Controllers\PGSyllabusController;
 use App\Http\Controllers\SsrReportsController;
 use App\Http\Controllers\UGSyllabusController;
+use App\Http\Controllers\CollegeDocsController;
 use App\Http\Controllers\AboutCollegeController;
 use App\Http\Controllers\AboutLibraryController;
 use App\Http\Controllers\LibraryRulesController;
@@ -361,4 +362,13 @@ Route::group(['middleware'=>'adminuser'],function(){
            Route::post('ssrReports_edit/{id}',[SsrReportsController::class,'ssrReports_update'])->name('ssrReports_update');
            Route::get('ssrReports_delete/{id}',[SsrReportsController::class,'ssrReports_delete'])->name('ssrReports_delete');
         // AQAR Reports routes Ends here
+
+        // College Documents routes starts here
+        Route::get('collegeDocs_list',[CollegeDocsController::class,'collegeDocs_list'])->name('collegeDocs_list');
+        Route::get('collegeDocs_add',[CollegeDocsController::class,'collegeDocs_add'])->name('collegeDocs_add');
+        Route::post('collegeDocs_add',[CollegeDocsController::class,'collegeDocs_insert'])->name('collegeDocs_insert');
+        Route::get('collegeDocs_edit/{id}',[CollegeDocsController::class,'collegeDocs_edit'])->name('collegeDocs_edit');
+        Route::post('collegeDocs_edit/{id}',[CollegeDocsController::class,'collegeDocs_update'])->name('collegeDocs_update');
+        Route::get('collegeDocs_delete/{id}',[CollegeDocsController::class,'collegeDocs_delete'])->name('collegeDocs_delete');
+     // College Documents routes Ends here
 });
