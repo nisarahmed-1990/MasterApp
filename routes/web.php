@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArcController;
+use App\Http\Controllers\Cr1Controller;
 use App\Http\Controllers\GrcController;
 use App\Http\Controllers\WecController;
 use App\Http\Controllers\AshcController;
@@ -371,4 +372,13 @@ Route::group(['middleware'=>'adminuser'],function(){
         Route::post('collegeDocs_edit/{id}',[CollegeDocsController::class,'collegeDocs_update'])->name('collegeDocs_update');
         Route::get('collegeDocs_delete/{id}',[CollegeDocsController::class,'collegeDocs_delete'])->name('collegeDocs_delete');
      // College Documents routes Ends here
+
+     // Criterion 1 routes starts here
+     Route::get('cr1_list',[Cr1Controller::class,'cr1_list'])->name('cr1_list');
+     Route::get('cr1_add',[Cr1Controller::class,'cr1_add'])->name('cr1_add');
+     Route::post('cr1_add',[Cr1Controller::class,'cr1_insert'])->name('cr1_insert');
+     Route::get('cr1_edit/{id}',[Cr1Controller::class,'cr1_edit'])->name('cr1_edit');
+     Route::post('cr1_edit/{id}',[Cr1Controller::class,'cr1_update'])->name('cr1_update');
+     Route::get('cr1_delete/{id}',[Cr1Controller::class,'cr1_delete'])->name('cr1_delete');
+  // Criterion 1 routes Ends here
 });
