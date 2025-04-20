@@ -44,7 +44,7 @@ class Cr2Controller extends Controller
     }
     public function cr2_edit($id)
     {
-        $data['getRecord'] = Cr1Model::getSingle($id);
+        $data['getRecord'] = Cr2Model::getSingle($id);
         return view('backend/NAAC/CR2/cr2_edit',$data);
     }
 
@@ -52,7 +52,7 @@ class Cr2Controller extends Controller
     {
         $request->validate([
             'title' => 'nullable|string',
-            'metrics' =>'nullabe|string',
+            'metrics' =>'nullable|string',
             'pdf' => 'nullable|mimes:pdf|max:7168', // Max size 7MB, make it nullable for updates
         ]);
 
@@ -72,7 +72,7 @@ class Cr2Controller extends Controller
 
         // Save the updated record
         $cr2->save();
-        return redirect('cr1_list')->with('success','Metric updated successfully');
+        return redirect('cr2_list')->with('success','Metric updated successfully');
     }
     public function cr2_delete($id)
     {

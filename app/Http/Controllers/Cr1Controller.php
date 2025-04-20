@@ -53,7 +53,7 @@ class Cr1Controller extends Controller
     {
         $request->validate([
             'title' => 'nullable|string',
-            'metrics' =>'nullabe|string',
+            'metrics' =>'nullable|string',
             'pdf' => 'nullable|mimes:pdf|max:7168', // Max size 7MB, make it nullable for updates
         ]);
 

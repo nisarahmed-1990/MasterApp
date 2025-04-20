@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ArcModel;
 use App\Models\Carousel;
+use App\Models\Cr1Model;
+use App\Models\Cr2Model;
 use App\Models\GrcModel;
 use App\Models\WecModel;
 use App\Models\AshcModel;
@@ -216,7 +218,8 @@ class HomeController extends Controller
     }
     public function criterion1()
     {
-        return view('frontend/criterion1');
+        $data['getRecords'] = Cr1Model::getRecords();
+        return view('frontend/criterion1', $data);
     }
     public function collegeDocuments()
     {
@@ -225,7 +228,8 @@ class HomeController extends Controller
     }
     public function criterion2()
     {
-        return view('frontend/criterion2');
+        $data['getRecords'] = Cr2Model::getRecords();
+        return view('frontend/criterion2', $data);
     }
     public function criterion3()
     {

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArcController;
 use App\Http\Controllers\Cr1Controller;
+use App\Http\Controllers\Cr2Controller;
 use App\Http\Controllers\GrcController;
 use App\Http\Controllers\WecController;
 use App\Http\Controllers\AshcController;
@@ -382,12 +383,12 @@ Route::group(['middleware'=>'adminuser'],function(){
      Route::get('cr1_delete/{id}',[Cr1Controller::class,'cr1_delete'])->name('cr1_delete');
   // Criterion 1 routes Ends here
 
-  // Criterion 2 routes starts here
-  Route::get('cr2_list',[Cr2Controller::class,'cr2_list'])->name('cr2_list');
-  Route::get('cr2_add',[Cr2Controller::class,'cr2_add'])->name('cr2_add');
-  Route::post('cr2_add',[Cr2Controller::class,'cr2_insert'])->name('cr2_insert');
-  Route::get('cr2_edit/{id}',[Cr2Controller::class,'cr2_edit'])->name('cr2_edit');
-  Route::post('cr2_edit/{id}',[Cr2Controller::class,'cr2_update'])->name('cr2_update');
-  Route::get('cr2_delete/{id}',[Cr2Controller::class,'cr2_delete'])->name('cr1_delete');
-// Criterion 2 routes Ends here
+    // Criterion 2 routes starts here
+    Route::get('cr2_list',[Cr2Controller::class,'cr2_list'])->name('cr2_list');
+    Route::get('cr2_add',[Cr2Controller::class,'cr2_add'])->name('cr2_add');
+    Route::post('cr2_add',[Cr2Controller::class,'cr2_insert'])->name('cr2_insert');
+    Route::get('cr2_edit/{id}',[Cr2Controller::class,'cr2_edit'])->name('cr2_edit');
+    Route::post('cr2_edit/{id}',[Cr2Controller::class,'cr2_update'])->name('cr2_update');
+    Route::get('cr2_delete/{id}',[Cr2Controller::class,'cr2_delete'])->name('cr2_delete');
+    // Criterion 2 routes Ends here
 });
