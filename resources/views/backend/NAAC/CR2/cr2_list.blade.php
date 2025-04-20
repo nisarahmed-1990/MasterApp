@@ -11,8 +11,8 @@
  <div class="card">
     <div class="card-body">
 
-      <h5 class="card-title">Criterion 1 Documents
-        <a href="{{ route('cr1_insert') }}" class="btn btn-primary sm-btn" style="float: right">Add</a>
+      <h5 class="card-title">Criterion 2 Documents
+        <a href="{{ route('cr2_insert') }}" class="btn btn-primary sm-btn" style="float: right">Add</a>
       </h5>
      <table class="table table-striped">
         <thead>
@@ -31,8 +31,8 @@
                     <td>{{ $pdf->metrics }}</td>
                     <td>
                         <a class="btn btn-primary btn-sm" href="{{ asset('storage/pdfs/' . $pdf->title) }}" target="_blank">view</a>
-                        <a class="btn btn-secondary btn-sm" href="{{ url('cr1_edit/'.$pdf->id) }}"><i class="bi bi-pencil"></i></a>
-                        <a onclick="return confirm('Do you want to delete?')" class="btn btn-danger btn-sm" href="{{ url('cr1_delete/'.$pdf->id) }}"><i class="bi bi-trash3-fill"></i></a>
+                        <a class="btn btn-secondary btn-sm" href="{{ url('cr2_edit/'.$pdf->id) }}"><i class="bi bi-pencil"></i></a>
+                        <a onclick="return confirm('Do you want to delete?')" class="btn btn-danger btn-sm" href="{{ url('cr2_delete/'.$pdf->id) }}"><i class="bi bi-trash3-fill"></i></a>
                     </td>
                 </tr>
             @endforeach
